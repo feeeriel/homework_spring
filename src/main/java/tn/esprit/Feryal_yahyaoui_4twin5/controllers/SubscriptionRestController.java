@@ -22,4 +22,12 @@ public class SubscriptionRestController {
     public Subscription getSubscription(@PathVariable Long numSub) {
         return subscriptionServices.retrieveSubscription(numSub);
     }
+    @PutMapping("/update")
+    public Subscription updateSubscription(@RequestBody Subscription subscription) {
+        return subscriptionServices.updateSubscription(subscription);
+    }
+    @DeleteMapping("/delete/{numSubscription}")
+    public void deleteSubscription(@PathVariable Long numSubscription) {
+        subscriptionServices.removeSubscription(numSubscription);
+    }
 }
