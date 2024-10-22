@@ -22,5 +22,14 @@ public class InstructorRestController {
     public Instructor getInstructor(@PathVariable Long numInstructor) {
         return instructorServices.retrieveInstructor(numInstructor);
     }
+    @PutMapping("update")
+    public Instructor updateInstructor(@RequestBody Instructor instructor) {
+        return instructorServices.updateInstructor(instructor);
+    }
+    @DeleteMapping("/delete/{numInstructor}")
+    public void deleteInstructor(@PathVariable Long numInstructor) {
+        instructorServices.removeInstructor(numInstructor);
+    }
+
 
 }
