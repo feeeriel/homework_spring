@@ -21,4 +21,9 @@ public class PisteRestController {
     public Piste getPiste(@PathVariable Long numPiste) {
         return pisteServices.retrievePiste(numPiste);
     }
+    @DeleteMapping("/delete/{numPiste}")
+    public void deletePiste(@RequestBody Long numPiste) {
+        pisteServices.removePiste(numPiste);
+    }
+
 }
